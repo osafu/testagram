@@ -1,10 +1,15 @@
-<%= notice %>
-<h1>投稿一覧</h1>
+<section class="timeline">
+  <ul class="timeline-items">
+    <% @posts.each do |post| %>
+      <li class="timeline-item">
+        <p><%= post.content %></p>
+        <div class="post-action-list">
+          <span class="post-action btn btn-success"><%= link_to "編集", edit_post_path(post.id) %></span>
+          <span class="post-action btn btn-danger"><%= link_to "削除", post_path(post.id), method: :delete, data: { confirm: '削除してよろしいですか？'} %></span>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</section>
 
-<% @posts.each do |post| %>
-  <p><%= post.content %></p>
-  <span><%= link_to "編集", edit_post_path(post.id) %></span>
-  <span><%= link_to "削除", post_path(post.id), method: :delete, data: { confirm: '削除してよろしいですか？'} %></span>
-<% end %>
-
-<p><%= link_to "投稿する", new_post_path %></p>
+<%= link_to "投稿する", new_post_path, :class => 'btn btn-info btn-post' %>

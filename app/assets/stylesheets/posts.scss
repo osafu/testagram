@@ -1,3 +1,131 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@mixin dark-btn { color: #FFF;}
+@mixin light-btn { color: #333;}
+@mixin default-fcolor { color: #333;}
+@mixin default-hover { opacity: 0.7;}
+@mixin default-ffamily{ font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;}
+
+body{
+  font-size: 16px;
+  @include default-fcolor;
+  @include default-ffamily;
+  background: #FAFAFA;
+  padding-top: 120px
+}
+
+a{
+  @include default-fcolor;
+  :hover{
+    @include default-fcolor;
+    @include default-hover;
+  }
+}
+
+ul{
+  padding: 0;
+  margin: 0;
+}
+
+li{
+  list-style: none;
+}
+
+h2{
+  margin-bottom: 60px;
+}
+
+header{
+  background-color: #FFF;
+  width: 100%;
+  border-bottom: 1px solid #DDD;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.header-inner{
+  display: flex;
+  align-items: center;
+  max-width: 1010px;
+  margin: 0 auto;
+  .header-logo{
+    margin-right: auto;
+    font-family: 'Norican', cursive;
+  }
+  .header-logo h1{
+    position: relative;
+    bottom: 2px;
+    a{
+      @include default-fcolor;
+      text-decoration: none;
+      padding-left: 65px;
+      &:hover{
+        @include default-fcolor;
+        @include default-hover;
+      }
+    }
+    i{
+      position: absolute;
+      top: 4px;
+      left: 0;
+      padding-right: 20px;
+      border-right: 1px solid;
+    }
+  }
+  .nav-lists{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 24px;
+    .nav-list{
+      padding-left: 20px;
+      padding-right: 20px;
+      a{
+        @include default-fcolor;
+      }
+    }
+  }
+}
+
+.container{
+  margin-bottom: 120px;
+}
+
+.timeline{
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  .timeline-item{
+    margin: 20px 0;
+    padding: 20px 0;
+    border: 1px solid #DDD;
+    background-color: #FFF;
+    border-radius: 3px;
+    .btn{
+      a{
+        @include default-fcolor;
+      }
+    }
+    .btn-success{
+      a{
+        @include dark-btn;
+      }
+    }
+
+    .btn-danger{
+        a{
+          @include dark-btn;
+        }
+    }
+  }
+}
+
+.btn-post{
+  margin: 30px 0;
+}
+
+footer{
+  padding: 20px 0;
+  width: 100%;
+  text-align: center;
+  background-color: #FFF;
+  font-size: 12px;
+}

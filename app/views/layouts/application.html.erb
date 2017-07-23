@@ -1,30 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Testagram</title>
+  <title>testagram</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Norican" rel="stylesheet">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<div class="wrapper col-md-12">
+<div class="wrapper">
 
-  <header class="text-center col-md-12">
-    <h1>Testagram</h1>
+  <header class="row">
+    <div class="header-inner row">
+      <div class="header-logo col-md-6">
+        <h1>
+          <%= link_to root_path do %>
+            <i class="fa fa-instagram" aria-hidden="true"></i>testagram
+          <% end %>
+          </h1>
+      </div>
+      <nav class="col-md-6">
+        <ul class="nav-lists">
+          <% if user_signed_in? %>
+            <li class="nav-list">
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-sign-out" aria-hidden="true"></i>
+              <% end %>
+            </li>
+            <li class="nav-list">
+              <%= link_to edit_user_registration_path do %>
+                <i class="fa fa-user" aria-hidden="true"></i>
+              <% end %>
+            </li>
+          <% else %>
+            <li class="nav-list">
+              <%= link_to new_user_session_path do %>
+                <i class="fa fa-sign-in" aria-hidden="true"></i>
+              <% end %>
+            </li>
+            <li class="nav-list">
+              <%= link_to new_user_registration_path do %>
+                <span class="btn btn-default">会員登録</span>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <div class="container text-center">
+  <main class="container text-center">
 
   <%= yield %>
 
-  </div>
-
-  <footer class="text-center col-md-12">
-    Copyright &copy; 2017, osapoco All Rights Reserved.
-  </footer>
+  </main>
 
 </div>
+
+<footer>
+  Copyright &copy; 2017, osapoco All Rights Reserved.
+</footer>
 
 </body>
 </html>

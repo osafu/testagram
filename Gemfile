@@ -46,4 +46,8 @@ group :development, :test do
 
   gem 'rails_12factor', group: :production
 
+  gem 'devise'
+
+  gem 'faker'
+
 end
