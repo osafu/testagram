@@ -32,6 +32,20 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
+gem 'twitter-bootstrap-rails'
+
+gem 'rails_12factor', group: :production
+
+gem 'devise'
+
+gem 'faker'
+
+gem 'rails_admin'
+
+gem 'cancan'
+
+
 group :development do
   gem 'letter_opener_web'
 end
@@ -47,11 +61,3 @@ group :development, :test do
   gem 'spring'
 
 end
-
-  gem 'twitter-bootstrap-rails'
-
-  gem 'rails_12factor', group: :production
-
-  gem 'devise'
-
-  gem 'faker'
