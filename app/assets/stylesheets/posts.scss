@@ -3,13 +3,119 @@
 @mixin default-fcolor { color: #333;}
 @mixin default-hover { opacity: 0.7;}
 @mixin default-ffamily{ font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;}
+@mixin btn-facebook {background-color: #3B5998; color: #fff;}
+@mixin btn-twitter {background-color: #00aced; color: #fff;}
+
+
+html {
+  height: 100%;
+}
 
 body{
   font-size: 16px;
   @include default-fcolor;
   @include default-ffamily;
   background: #FAFAFA;
-  padding-top: 120px
+  padding-top: 120px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+input[type="email"],
+input[type="text"],
+input[type="password"],
+button,
+textarea{
+  margin: 0;
+  padding: 10px;
+  background: none;
+  border: solid 1px #CCC;
+  border-radius: 6px;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.form-content{
+  i.fa{
+    margin-right: 3px;
+  }
+}
+.field{
+  margin: 0 0 25px;
+}
+
+.form-content-main{
+  margin-bottom: 10px;
+  .form-content-in{
+    padding: 40px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    .actions{
+      margin-top: 15px;
+    }
+    .field{
+      input[type="email"],
+      input[type="text"],
+      input[type="password"]{
+        width: 100%;
+      }
+      .field-label{
+        font-size: 13px;
+        margin-bottom: 15px;
+        display: block;
+        text-align: left;
+      }
+      label[for="user_avatar"]{
+        margin: 15px 0 0;
+      }
+    }
+    .field-remember_me{
+      font-size: 13px;
+      margin-bottom: 10px;
+      label{
+        font-weight: normal;
+      }
+    }
+    .profile-img{
+      max-width: 310px;
+      display: block;
+      margin: 20px auto 0;
+    }
+    .error_messages{
+      margin-bottom: 30px;
+      .alert{
+        text-align: left;
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+.form-content-sub{
+  .btn-delete{
+    margin-bottom: 20px;
+  }
+  .link-back{
+    text-align: left;
+    .btn-back{
+      padding: 0;
+    }
+  }
+  .btn-facebook{
+    @include btn-facebook;
+  }
+  .btn-twitter{
+    @include btn-twitter;
+  }
+}
+
+.form-content-in{
+  margin: 0 auto;
+  float: none;
 }
 
 a{
@@ -30,7 +136,7 @@ li{
 }
 
 h2{
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 header{
@@ -40,6 +146,11 @@ header{
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1000;
+}
+
+.wrapper{
+  flex: 1;
 }
 
 .header-inner{
@@ -94,11 +205,11 @@ header{
   max-width: 600px;
   margin: 0 auto;
   .timeline-item{
-    margin: 20px 0;
-    padding: 20px;
     border: 1px solid #DDD;
     background-color: #FFF;
     border-radius: 3px;
+    padding: 20px 0;
+    margin-bottom: 60px;
     .btn{
       a{
         @include default-fcolor;
@@ -109,12 +220,42 @@ header{
         @include dark-btn;
       }
     }
-
     .btn-danger{
         a{
           @include dark-btn;
         }
     }
+    .user-info {
+      text-align: left;
+      padding: 0 20px;
+      .user-info-content{
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .user-info-content-avatar img{
+        width: 30px;
+        border-radius: 50%;
+        margin-top: -2px;
+      }
+      .user-info-content-name{
+        font-size: 13px;
+        font-weight: 600;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+  .post-picture{
+    margin: 20px 0;
+  }
+  .post-content{
+    margin: 0 20px;
+    font-size: 15px;
+    text-align: left;
+  }
+  .post-action-list{
+    margin-top: 30px;
   }
 }
 
@@ -122,30 +263,10 @@ header{
   margin: 30px 0;
 }
 
-.user-info {
-  text-align: left;
-  .user-info-content{
-    display: inline-block;
-    vertical-align: middle;
-  }
-  .user-info-content-avatar img{
-    width: 24px;
-    border-radius: 50%;
-    margin-top: -2px;
-  }
-  .user-info-content-name{
-    font-size: 13px;
-    font-weight: 600;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-}
-
 footer{
   padding: 20px 0;
   width: 100%;
   text-align: center;
   background-color: #FFF;
-  font-size: 12px;
+  font-size: 13px;
 }

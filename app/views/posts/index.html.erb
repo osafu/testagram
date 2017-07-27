@@ -8,6 +8,8 @@
           <p class="user-info-content user-info-content-avatar"><%= profile_img(post.user) %></p>
           <p class="user-info-content user-info-content-name"><span class="name"><%= post.user.name %></span></p>
         </div>
+        <p class="post-picture"><%= image_tag post.picture %></p>
+        <p class="post-content"><%= post.content %></p>
         <div class="post-action-list">
           <span class="post-action btn btn-success"><%= link_to "編集", edit_post_path(post.id) %></span>
           <span class="post-action btn btn-danger"><%= link_to "削除", post_path(post.id), method: :delete, data: { confirm: '削除してよろしいですか？'} %></span>
@@ -16,5 +18,3 @@
     <% end %>
   </ul>
 </section>
-
-<%= link_to "投稿する", new_post_path, :class => 'btn btn-info btn-post' %>

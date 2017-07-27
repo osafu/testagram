@@ -1,4 +1,7 @@
-<h2>Resend confirmation instructions</h2>
+<h2>確認メール再発行</h2>
+
+<div class="form-content form-content-main row">
+  <div class="form-content-in col-md-4">
 
 <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
@@ -9,8 +12,16 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Resend confirmation instructions" %>
+    <%= f.submit "確認メール再発行", class: "btn btn-success btn-block" %>
   </div>
 <% end %>
+</div>
+</div>
+
+<div class="form-content form-content-sub row">
+  <div class="form-content-in col-md-4">
 
 <%= render "devise/shared/links" %>
+
+</div>
+</div>

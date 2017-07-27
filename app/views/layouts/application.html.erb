@@ -26,18 +26,21 @@
           <% if user_signed_in? %>
             <li class="nav-list">
               <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                <i class="fa fa-sign-out" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="ログアウト"></i>
               <% end %>
             </li>
             <li class="nav-list">
               <%= link_to edit_user_registration_path do %>
-                <i class="fa fa-user" aria-hidden="true"></i>
+                <i class="fa fa-user" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="アカウント編集"></i>
               <% end %>
+            </li>
+            <li class="nav-list">
+                <%= link_to "投稿する", new_post_path, class: "btn btn-default" %>
             </li>
           <% else %>
             <li class="nav-list">
               <%= link_to new_user_session_path do %>
-                <i class="fa fa-sign-in" aria-hidden="true"></i>
+                <i class="fa fa-sign-in" aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="ログイン"></i>
               <% end %>
             </li>
             <li class="nav-list">
@@ -60,8 +63,38 @@
 </div>
 
 <footer>
-  Copyright &copy; 2017, osapoco All Rights Reserved.
+  Copyright &copy; 2017, osafune All Rights Reserved.
 </footer>
+
+<script type="text/javascript">
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+
+
+<script type="text/javascript">
+
+Command: toastr["info"]("ログインしました")
+
+toastr.options = {
+  "closeButton": true,
+  "debug": false,
+  "newestOnTop": false,
+  "progressBar": false,
+  "positionClass": "toast-top-full-width",
+  "preventDuplicates": false,
+  "onclick": null,
+  "showDuration": "300",
+  "hideDuration": "1000",
+  "timeOut": "2000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+}
+</script>
 
 </body>
 </html>

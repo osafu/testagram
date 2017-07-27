@@ -17,6 +17,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(posts_params)
     @post.user_id = current_user.id
+    @post.picture.retrieve_from_cache! params[:cache][:picture]
     if @post.save
       redirect_to posts_path, notice: "投稿しました"
       NoticeMailer.sendmail_post(@post).deliver
@@ -47,7 +48,7 @@ class PostsController < ApplicationController
 
   private
   def posts_params
-    params.require(:post).permit(:content)
+    params.require(:post).permit(:content, :picture)
   end
 
   def set_post

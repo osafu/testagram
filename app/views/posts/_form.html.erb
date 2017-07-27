@@ -10,9 +10,14 @@
       </ul>
     </div>
   <% end %>
-
-  <%= f.label :content %>
-  <%= f.text_field :content %>
+  <p>
+    <%= f.label :comment %>
+    <%= f.text_field :content %>
+  </p>
+  <p>
+    <%= f.label :picture %>
+    <%= f.file_field :picture %>
+  </p>
   <br>
   <%= f.submit %>
 <% end %>

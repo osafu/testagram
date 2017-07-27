@@ -5,6 +5,11 @@
   <!-- `f.hidden_field`を使用して、リクエストパラメータに値を設定できるようにしています。 -->
   <%= f.hidden_field :content %>
 
+  <div>
+  <%= hidden_field_tag :"cache[picture]", @post.picture.cache_name %>
+  <%= image_tag(@post.picture) %>
+  </div>
+  
   <p><%= @post.content %></p>
   <%= f.submit "登録する" %>
 <% end %>
