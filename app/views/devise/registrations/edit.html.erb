@@ -43,7 +43,7 @@
   <% end %>
 
     <div class="field">
-      <%= f.label :avatar, class: "field-label" do %>
+      <%= f.label :avatar_title, class: "field-label" do %>
       <i class="fa fa-user-circle-o"></i>プロフィール画像
       <% end %>
       <div class="profile-img"><%= profile_img(@user) if profile_img(@user) %></div>
@@ -70,7 +70,16 @@
     <% end %>
     <p class="link-back"><%= link_to :back, class: "btn btn-link btn-back" do %>
     <i class="fa fa-arrow-left"></i>前の画面に戻る
-  </p>
+    </p>
     <% end %>
   </div>
 </div>
+
+<script>
+$(document).on('change', ':file', function() {
+    var input = $(this),
+    numFiles = input.get(0).files ? input.get(0).files.length : 1,
+    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+    $('label[for="user_avatar"]').before("<p class='selected-file'>" + label + "</p>");
+});
+</script>

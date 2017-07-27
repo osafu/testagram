@@ -38,86 +38,6 @@ textarea{
   appearance: none;
 }
 
-.form-content{
-  i.fa{
-    margin-right: 3px;
-  }
-}
-.field{
-  margin: 0 0 25px;
-}
-
-.form-content-main{
-  margin-bottom: 10px;
-  .form-content-in{
-    padding: 40px;
-    margin-bottom: 10px;
-    background-color: #fff;
-    border-radius: 10px;
-    .actions{
-      margin-top: 15px;
-    }
-    .field{
-      input[type="email"],
-      input[type="text"],
-      input[type="password"]{
-        width: 100%;
-      }
-      .field-label{
-        font-size: 13px;
-        margin-bottom: 15px;
-        display: block;
-        text-align: left;
-      }
-      label[for="user_avatar"]{
-        margin: 15px 0 0;
-      }
-    }
-    .field-remember_me{
-      font-size: 13px;
-      margin-bottom: 10px;
-      label{
-        font-weight: normal;
-      }
-    }
-    .profile-img{
-      max-width: 310px;
-      display: block;
-      margin: 20px auto 0;
-    }
-    .error_messages{
-      margin-bottom: 30px;
-      .alert{
-        text-align: left;
-        font-size: 13px;
-      }
-    }
-  }
-}
-
-.form-content-sub{
-  .btn-delete{
-    margin-bottom: 20px;
-  }
-  .link-back{
-    text-align: left;
-    .btn-back{
-      padding: 0;
-    }
-  }
-  .btn-facebook{
-    @include btn-facebook;
-  }
-  .btn-twitter{
-    @include btn-twitter;
-  }
-}
-
-.form-content-in{
-  margin: 0 auto;
-  float: none;
-}
-
 a{
   @include default-fcolor;
   :hover{
@@ -152,6 +72,23 @@ header{
 .wrapper{
   flex: 1;
 }
+
+.top-index-wrap{
+  .main-logo{
+    font-family: 'Norican', cursive;
+  }
+}
+
+.notice-txt{
+  margin: 0 0 2em;
+  text-align: center;
+}
+
+.post-content,
+.confirm-content{
+  word-wrap: break-word;
+}
+
 
 .header-inner{
   display: flex;
@@ -261,6 +198,89 @@ header{
 
 .btn-post{
   margin: 30px 0;
+}
+
+.form-content{
+  i.fa{
+    margin-right: 3px;
+  }
+  .selected-file{
+    margin: 0 0 10px;
+  }
+  .confirm-content{
+    margin: 1em 0;
+  }
+}
+.field{
+  margin: 0 0 25px;
+}
+
+.form-content-main{
+  margin-bottom: 10px;
+  .form-content-in{
+    padding: 40px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    .actions{
+      margin-top: 15px;
+    }
+    .field{
+      input[type="email"],
+      input[type="text"],
+      input[type="password"]{
+        width: 100%;
+      }
+      .field-label{
+        font-size: 13px;
+        margin-bottom: 15px;
+        display: block;
+        text-align: left;
+      }
+    }
+    .field-remember_me{
+      font-size: 13px;
+      margin-bottom: 10px;
+      label{
+        font-weight: normal;
+      }
+    }
+    .profile-img{
+      max-width: 310px;
+      display: block;
+      margin: 20px auto;
+    }
+    .error_messages{
+      margin-bottom: 30px;
+      .alert{
+        text-align: left;
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+.form-content-sub{
+  .btn-delete{
+    margin-bottom: 20px;
+  }
+  .link-back{
+    text-align: left;
+    .btn-back{
+      padding: 0;
+    }
+  }
+  .btn-facebook{
+    @include btn-facebook;
+  }
+  .btn-twitter{
+    @include btn-twitter;
+  }
+}
+
+.form-content-in{
+  margin: 0 auto;
+  float: none;
 }
 
 footer{

@@ -1,5 +1,7 @@
-<%= notice %>
-<h3>以下の内容で、送信する。</h3>
+<h2>投稿内容確認</h2>
+
+<div class="form-content form-content-main row">
+  <div class="form-content-in col-md-4">
 
 <%= form_for(@post) do |f| %>
   <!-- `f.hidden_field`を使用して、リクエストパラメータに値を設定できるようにしています。 -->
@@ -9,12 +11,23 @@
   <%= hidden_field_tag :"cache[picture]", @post.picture.cache_name %>
   <%= image_tag(@post.picture) %>
   </div>
-  
-  <p><%= @post.content %></p>
-  <%= f.submit "登録する" %>
+
+  <p class="confirm-content"><%= @post.content %></p>
+  <%= f.submit "投稿する", class: "btn btn-primary btn-block" %>
 <% end %>
+</div>
+</div>
+
+<div class="form-content form-content-sub row">
+  <div class="form-content-in col-md-4">
 
 <%= form_for(@post, url: new_post_path, method: 'get') do |f| %>
   <%= f.hidden_field :content %>
-  <%= f.submit "もどる", name: 'back' %>
+  <p class="link-back">
+  <%= link_to :back, class: "btn btn-link btn-back" do %>
+    <i class="fa fa-arrow-left"></i>前の画面に戻る
+    </p>
+  <% end %>
 <% end %>
+</div>
+</div>

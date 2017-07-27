@@ -1,3 +1,49 @@
-// Place all the styles related to the Top controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.top-index-wrap{
+  display: flex;
+  width: 70%;
+  margin: 60px auto 0;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.content-left,
+.content-right{
+  width: 50%;
+
+}
+.content-left{
+  text-align: left;
+  h1{
+    margin: 0 0 20px 0;
+    font-size: 48px;
+    font-weight: bold;
+    color: #333;
+  }
+  .info-txt{
+    font-size: 14px;
+    line-height: 26px;
+    margin-bottom: 20px;
+  }
+}
+
+.content-right{
+  img{
+    width: 80%;
+  }
+}
+
+.link-main-btn a{
+    background-color: #5cb85c;
+    padding: 20px;
+    display: block;
+    color: #FFF;
+    border-radius: 4px;
+    font-weight: bold;
+    width: 180px;
+    text-align: center;
+    &:hover{
+        background-color: #4cae4c;
+        text-decoration: none;
+        color: #FFF;
+    }
+}
