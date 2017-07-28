@@ -3,9 +3,7 @@
 
 <%= form_for(@post, url: choose_new_or_edit) do |f| %>
   <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= @post.errors.count %>件のエラーがあります。</h2>
-
+    <div class="alert alert-danger">
       <ul>
       <% @post.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -51,6 +49,9 @@ $(document).on('change', ':file', function() {
     var input = $(this),
     numFiles = input.get(0).files ? input.get(0).files.length : 1,
     label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-    $('label[for="post_picture"]').before("<p class='selected-file'>" + label + "</p>");
+    if (!($('.selected-file').length)){
+      $('label[for="post_picture"]').before("<p class='selected-file'>" + label + "</p>");
+    }
+    $('.selected-file').before().html("<p class='selected-file'>" + label + "</p>");
 });
 </script>

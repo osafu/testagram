@@ -69,6 +69,14 @@ header{
   z-index: 1000;
 }
 
+.alert.alert-danger {
+    font-size: 14px;
+    text-align: left;
+    h2{
+      font-size: 16px;
+    }
+}
+
 .wrapper{
   flex: 1;
 }
@@ -207,8 +215,11 @@ header{
   .selected-file{
     margin: 0 0 10px;
   }
+  .confirm-picture{
+    margin-bottom: 15px;
+  }
   .confirm-content{
-    margin: 1em 0;
+    margin: 0 0 15px;
   }
 }
 .field{
