@@ -6,16 +6,12 @@
           <p class="user-info-content user-info-content-avatar"><%= profile_img(post.user) %></p>
           <p class="user-info-content user-info-content-name"><span class="name"><%= post.user.name %></span></p>
         </div>
-        <% if post.picture.nil? %>
         <p class="post-picture">
           <%= image_tag post.picture %>
         </p>
-        <% end %>
-        <% if post.content == nil %>
         <p class="post-content">
           <%= post.content %>
         </p>
-        <% end %>
         <div class="post-action-list">
           <span class="post-action btn btn-success"><%= link_to "編集", edit_post_path(post.id) %></span>
           <span class="post-action btn btn-danger"><%= link_to "削除", post_path(post.id), method: :delete, data: { confirm: '削除してよろしいですか？'} %></span>
